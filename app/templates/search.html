@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<h1>{{title}}</h1>
+	<body>
+		<form action="" method="post" name="event_search">
+			{{form.hidden_tag()}}
+			<p> What do you want to find?: 
+				<br>{{form.event_name(size=80)}}<br>
+			</p>
+			
+			<p>
+				<input class="btn btn-success" type="submit" value="Tim Kiem">
+			</p>
+		</form>
+	</body>
+
+	
+
+
+	{% if posts %}
+	<div class="table-responsive">
+		<table class="table">
+			<thead>
+				<tr class="success">
+					<th>Tên</th>
+				</tr>
+			</thead>
+			<tbody>
+			{% for p in posts %}
+			<tr>
+					<td>{{ p }}</td>
+			</tr> 
+			{% endfor %}
+			</tbody>
+		</table>
+	</div>
+	{% endif %}
+{% endblock %}
